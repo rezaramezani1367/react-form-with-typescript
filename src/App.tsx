@@ -1,9 +1,20 @@
 import React, { useState } from "react";
-
+import Swal from "sweetalert2";
 import "./App.css";
 import AddPeople from "./components/AddPeople";
-
 import List from "./components/List";
+
+export const Toast = Swal.mixin({
+  toast: true,
+  position: "top-end",
+  showConfirmButton: false,
+  timer: 3000,
+  timerProgressBar: true,
+  didOpen: (toast) => {
+    toast.addEventListener("mouseenter", Swal.stopTimer);
+    toast.addEventListener("mouseleave", Swal.resumeTimer);
+  },
+});
 export interface IPeople {
   id: number;
   name: string;
@@ -12,14 +23,13 @@ export interface IPeople {
   note?: string;
 }
 const App = () => {
-
   const [peoples, setPeople] = useState<IPeople[]>([
     {
       id: 1,
       name: "حسن رمضانی",
       age: 34,
       url: "/images/hamzehazizzadeh_image.jpg",
-      note:'آموزش تایپ  تایپ  تایپ تایپ تایپ اسکریپت'
+      note: "آموزش تایپ  تایپ  تایپ تایپ تایپ اسکریپت",
     },
   ]);
 
@@ -28,9 +38,8 @@ const App = () => {
       <div className="my-3 p-4 font-bold text-2xl border shadow-xl w-full text-center">
         مدیریت اشخاص
       </div>
-      <List peoples={peoples} />
-      <AddPeople />
-      
+      <AddPeople peoples={peoples} setPeople={setPeople} />
+      <List peoples={peoples} setPeople={setPeople} />
     </div>
   );
 };
