@@ -1,6 +1,7 @@
 import React, { Dispatch, FC, SetStateAction } from "react";
 import { IPeople, Toast } from "../App";
 import { CgCloseO } from "react-icons/cg";
+import ModalEdit from "./ModalEdit";
 
 
 
@@ -61,6 +62,12 @@ const List: FC<IProps> = ({ peoples, setPeople }) => {
           onClick={() => deletePeople(index)}
         >
           <CgCloseO />
+        </div>
+        <div
+          className="absolute top-10 left-2 "
+          
+        >
+          <ModalEdit index={index} peoples={peoples} setPeople={setPeople} />
         </div>
       </div>
     );
