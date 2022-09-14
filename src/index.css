@@ -22,6 +22,8 @@
   from {
     margin-top: -800px;
     opacity: 40%;
+    transform: rotate(90deg) scale(1.4);
+    
   }
   to {
     margin-top: 0;

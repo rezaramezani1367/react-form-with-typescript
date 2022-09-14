@@ -77,7 +77,7 @@ const ModalEdit: FC<IProps> = ({ index, setPeople, peoples }) => {
           className="fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm flex items-center justify-center  z-10 "
         >
         
-          <div className="bg-white p-2 rounded w-96 animate-fadein">
+          <div className="bg-white p-2 rounded w-96 animate-fadein shadow-2xl">
             <h1 className="font-semibold text-center text-xl text-blue-700 mb-2">
               ویرایش کاربر
             </h1>
