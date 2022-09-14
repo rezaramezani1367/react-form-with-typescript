@@ -34,7 +34,7 @@ const App = () => {
       note: "آموزش تایپ  تایپ  تایپ تایپ تایپ اسکریپت",
     },
     {
-      id: 1,
+      id: 2,
       name: "رضا رمضانی",
       age: 33,
       url: "/images/hamzehazizzadeh_image.jpg",

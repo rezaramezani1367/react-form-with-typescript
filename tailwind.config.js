@@ -10,6 +10,12 @@ module.exports = {
       },
       fontFamily:{
         vazir:["vazir"]
+      },
+      keyframes:{
+        fadein:['fadein']
+      },
+      animation:{
+        'fadein': 'fadein 0.3s ease-in',
       }
     },
   },
