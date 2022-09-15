@@ -73,15 +73,16 @@ const ModalCreate: FC<IProps> = ({ setPeople, peoples }) => {
       </div>
       {showModal && (
         <div
-          onClick={(e) => {
+          onMouseDown={(e) => {
             if ((e.target as Element).id == "main-box") {
               setShowModal(false);
+              formik.resetForm();
             }
           }}
           id="main-box"
-          className="fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm flex items-center justify-center z-10"
+          className="fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm flex items-center justify-center z-10 transition-all duration-1000"
         >
-          <div className="bg-white p-2 rounded w-96 animate-fadein shadow-2xl">
+          <div className="bg-white p-2 rounded w-96 animate-fadein shadow-2xl transition-all duration-1000 ">
             <h1 className="font-semibold text-center text-xl text-blue-700 mb-2">
               ایجاد کاربر
             </h1>
